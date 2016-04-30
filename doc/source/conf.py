@@ -43,7 +43,7 @@ source_suffix = '.rst'
 #source_encoding = 'utf-8-sig'
 
 # The master toctree document.
-master_doc = 'contents'
+master_doc = 'index'
 
 # General information about the project.
 project = 'python-with-science'
@@ -224,7 +224,8 @@ latex_font_size = '12pt'
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
-latex_documents = [('index', project+'.tex', title, u'Jeff', 'manual')]
+# NOTE: LaTeX start document may differ from HTML start document.
+latex_documents = [(master_doc, project+'.tex', title, u'Jeff A', 'manual', True)]
 
 
 # A dictionary that contains LaTeX snippets that override those Sphinx usually 
@@ -237,8 +238,9 @@ latex_elements = { 'babel': '\\usepackage[english]{babel}' }
 #latex_logo = None
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
-# not chapters. (Deprecated since version 1.4: Use latex_toplevel_sectioning.)
-#latex_use_parts = False
+# not chapters. (Deprecated since version 1.4: Use latex_toplevel_sectioning,
+# but readthedocs is still at 1.3.5.)
+latex_use_parts = False
 
 # This value determines the topmost sectioning unit. It should be chosen from part,
 # chapter or section.

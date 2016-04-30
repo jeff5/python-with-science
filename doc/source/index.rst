@@ -1,6 +1,6 @@
 .. An Introduction to Python (with some Science)
-   The root `toctree` directive is in contents.rst
-   (for LaTeX, not reproduced in the HTML).
+   The text in this file is reproduced in the HTML output, but not the LaTeX & PDF.
+   (This is the start doc for LaTeX, but it is configured "toctree_only".)
 
 An Introduction to Python
 #########################
@@ -26,13 +26,22 @@ that the real world is more interesting than any game,
 and
 that coding is a game addictive enough in its own right.
 
+Contents of this Book
+*********************
+
+.. toctree::
+   :maxdepth: 2
+
+   shell/shell
+   program/program
 
 
 .. Generated but not sure I need them
 
 Indices and tables
 ******************
-* :ref:`genindex`
-* :ref:`modindex`
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+
 * :ref:`search`
 
