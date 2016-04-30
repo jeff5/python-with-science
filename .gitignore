@@ -1,3 +1,11 @@
+# Editor droppings
+*~
+
+# IDE cruft
+.project
+.pydevproject
+.settings/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -53,7 +61,7 @@ coverage.xml
 *.log
 
 # Sphinx documentation
-docs/_build/
+docs/build/
 
 # PyBuilder
 target/
