@@ -43,7 +43,7 @@ source_suffix = '.rst'
 #source_encoding = 'utf-8-sig'
 
 # The master toctree document.
-master_doc = 'index'
+master_doc = 'contents'
 
 # General information about the project.
 project = 'python-with-science'
@@ -219,7 +219,7 @@ latex_paper_size = 'a4'
 
 
 # The font size ('10pt', '11pt' or '12pt').
-latex_font_size = '11pt'
+latex_font_size = '12pt'
 
 
 # Grouping the document tree into LaTeX files. List of tuples
@@ -237,9 +237,12 @@ latex_elements = { 'babel': '\\usepackage[english]{babel}' }
 #latex_logo = None
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
-# not chapters.
-latex_use_parts = False
+# not chapters. (Deprecated since version 1.4: Use latex_toplevel_sectioning.)
+#latex_use_parts = False
 
+# This value determines the topmost sectioning unit. It should be chosen from part,
+# chapter or section.
+latex_toplevel_sectioning = 'chapter'
 
 # If true, show page references after internal links.
 #latex_show_pagerefs = False

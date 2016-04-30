@@ -1,8 +1,6 @@
 .. An Introduction to Python (with some Science)
-   master file, created by
-   sphinx-quickstart on Fri Feb 12 20:41:28 2016.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+   The root `toctree` directive is in contents.rst
+   (for LaTeX, not reproduced in the HTML).
 
 An Introduction to Python
 #########################
@@ -18,13 +16,6 @@ The project modules
 (modules 3 and up)
 do not depend at all on the type of computer in use.
 
-.. toctree::
-   :maxdepth: 2
-
-   shell/shell
-   program/program
-
-
 ... with some science
 *********************
 
@@ -38,9 +29,10 @@ that coding is a game addictive enough in its own right.
 
 
 .. Generated but not sure I need them
-   Indices and tables
-   ==================
-   * :ref:`genindex`
-   * :ref:`modindex`
-   * :ref:`search`
+
+Indices and tables
+******************
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
 
