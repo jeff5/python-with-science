@@ -4,8 +4,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-An Introduction to Python (with some Science)
-=============================================
+An Introduction to Python
+#########################
 
 This is an introduction and some projects for beginners in Python,
 using turtle graphics.
@@ -21,12 +21,12 @@ do not depend at all on the type of computer in use.
 .. toctree::
    :maxdepth: 2
 
-   shell
-   program
+   shell/shell
+   program/program
 
 
-Polemical footnote
-------------------
+... with some science
+*********************
 
 Many coding projects for young people focus on the creation of games,
 as if this were the only use of computers likely to interest them.
@@ -39,7 +39,7 @@ that coding is a game addictive enough in its own right.
 
 .. Generated but not sure I need them
    Indices and tables
-   ==================   
+   ==================
    * :ref:`genindex`
    * :ref:`modindex`
    * :ref:`search`
