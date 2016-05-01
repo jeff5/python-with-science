@@ -32,6 +32,23 @@ but in IDLE,
 when you get as far as typing ``polygon(``,
 IDLE will pop up this string as a reminder.
 
+.. important::
+
+   Never throw code away.
+
+   In these projects we explain the program a piece at a time.
+   Mostly you should **add** each new code fragment
+   to the program you have already,
+   normally at the end. 
+   Sometimes the fragments show a **change** to what you have.
+
+   Occasionally, there is a short fragment of code
+   that you only need for a few tests, then you'll replace it.
+
+   If ever *you* want to delete a lot of code,
+   first use "File" >> "Save Copy As" and give a name like ``spiral_2.py``,
+   so you can go back to your program as it was.
+
 
 Offset and fill the polygon
 ***************************
@@ -43,8 +60,9 @@ Here's a simple example where you can see what's going on:
 
 Drawing starts with the smallest square tile, nearest the middle,
 and continues anti-clockwise, putting down tiles.
+
 Each tile is slightly bigger than the last.
-Each circuit has a number of tiles you choose, 9 in this case.
+Each circuit has the same number of tiles, that you choose, 9 in this case.
 By the time it gets round once, the tile is twice the original size,
 and twice as far from the centre.
 It will go round as many times as you choose.
@@ -54,23 +72,6 @@ To put it in the right place,
 suppose the turtle is in the centre, and pointing the right way.
 We need to go forward some distance, then draw the polygon.
 Then we go back to the centre, ready for next time.
-
-.. important::
-
-   Never throw code away.
-
-   In these projects we build up the program in pieces.
-   Mostly you should **add** the code fragments below
-   to the program you have already,
-   often at the end. 
-   Sometimes the fragments show a **change** to what you have.
-
-   Occasionally, there is a short fragment of code
-   that you only need for a few tests, then replace.
-
-   If ever *you* want to delete a lot of code,
-   first use "File" >> "Save Copy As" and give a name like ``spiral_2.py``,
-   so you can go back to your program as it was.
 
 In code, it looks like this:
 
