@@ -37,7 +37,7 @@ Using the ``turtle`` library
 ****************************
 
 We're going to draw some shapes using the ``turtle`` library.
-Type the following in the editor (left) window::
+Type the following **in the editor** (left) window::
 
     from turtle import *
     speed("slowest")
@@ -59,7 +59,7 @@ and wherever it goes, unless you tell it not to, it draws a line.
 
 .. image:: line.png
 
-In the shell window (right), try a few more commands::
+**In the shell** window (right), try a few more commands::
 
     >>> left(45)
     >>> forward(50)
@@ -117,7 +117,7 @@ Save and run ... you drew a triangle!
 
 This kind of cut-and-paste code is ugly to programmers.
 We do repetition with a *for-loop*.
-Make your code more elegant like this:
+**Change** your code to be more elegant, like this:
 
 .. code-block:: python
    :emphasize-lines: 6-8
@@ -178,7 +178,7 @@ or even put in a library for someone else to use.
 
 Here's how to define a function to draw a shape with equal sides.
 You're nearly there already.
-Change your program to look like this:
+**Change** your program to look like this:
 
 .. code-block:: python
    :emphasize-lines: 4-7
@@ -259,7 +259,7 @@ Our thin black lines are a little dull.
 
 You can change the pen you use, or fill the shapes you draw with colour.
 Notice that the ``turtle`` module uses the American spelling "color".
-Change your program like this, or with some other shapes,
+**Change** your program like this, or with some other shapes,
 to try out the colour functions:
 
 .. code-block:: python
@@ -312,6 +312,6 @@ All the functions we have used and many more are explained.
 Visit a few you think you understand (like ``forward``),
 then take a look at some you might be interested in trying out.
 
-You won't understand all of it, but don't let that put off.
+You won't understand all of it, but don't let that put you off.
 Try things; make mistakes; learn.
 
