@@ -1,10 +1,11 @@
-.. First Steps in Python using RPi - the shell
+.. The shell
 
-The Python shell: an awesome calculator
-#######################################
+The shell: awesome calculator
+#############################
 
-You can run the Python shell directly,
-but it suits us here to run it by launching IDLE.
+We can talk directly to Python through a program called "the shell".
+You can run the shell several ways,
+but it suits us to run it by launching IDLE.
 
 Launching IDLE
 **************
@@ -24,7 +25,7 @@ At the ``>>>`` prompt type ``6*7``.
 The star ``*`` means multiplication.
 Python will reply with the answer 42.
 
-Try this::
+Now try this::
       
    >>> a = 7
    >>> b = 6
@@ -36,8 +37,8 @@ A variable is just a name you use for a value that matters to you.
 The ``=`` means "make the name refer to this value".
 
 When we tell Python to do a calculation,
-where we might have had a number,
-we can use a variable that refers to the number instead.
+instead of a number,
+we can use a variable that refers to the number.
 It could be an easy calculation, or one that's a bit complicated::
 
    >>> a + b
@@ -55,14 +56,33 @@ In the IDLE shell, you can re-use lines you typed earlier.
 Put the cursor on the line that says ``(a+b) * (a-b)``,
 using the mouse or the arrow keys,
 and press enter.
-This makes a copy of that line at the prompt, as if you typed it.
-Press enter again, and Python will work it out again::
+This makes a copy of that line at the prompt, as if you had typed it.
+Press enter again, and Python will work it out::
 
    >>> (a+b) * (a-b)
    13420
 
 This time, the meaning of ``a`` is different,
 so you get a different answer.
+
+.. sidebar:: About names for variables
+
+   You can use almost name for a variable,
+   made of letters, digits and the ``_`` character, but not spaces.
+   An example is ``top_5_cats``.
+   You can't start with a digit, because that looks like a number to Python.
+   You can't use the 33 words already taken by Python
+   (like ``for`` and ``in``),
+   that come out orange in IDLE.
+   You *can* use names like ``print`` or ``list``
+   (purple in IDLE)
+   that already mean something to Python,
+   but it confuses humans.
+
+   Programmers use short names (letters)
+   for variables that are not needed for long.
+   When a variable will be used in lots of places,
+   they use long helpful names to remind them what it means.
 
 A variable can refer to any kind of information.
 Sometimes you want to refer to a *string* of text.
@@ -75,32 +95,11 @@ and you can use ``+`` to stick strings together::
    >>> h + ' ' + w
    'Hello world!'
 
-.. sidebar:: About names for variables
-
-   You can use almost any word to name a variable,
-   made of letters, digits and the ``_`` character, but not spaces.
-   An example is ``level_10_score``.
-   You can't start with a digit, because that looks like a number to Python.
-   You can't use the 33 words already taken by Python
-   (like ``for`` and ``in``),
-   that come out orange in IDLE.
-   If you use a well-known word like ``print`` or ``list``
-   (purple in IDLE)
-   you won't be able to refer to the Python meanings of the same words.
-   
-   Programmers use short names (letters)
-   for variables that are not needed for long.
-   When a variable will be used in lots of places,
-   so they might forget what it refers to,
-   programmers use long helpful names.
-
 Again, again!
 *************
 
 Just now, we used the same expression over again with a new value by copying.
-Often, you need to work something out for every value in a list,
-or each number in a range.
-
+Often, you need to work something out for a whole list of values.
 Here is a list being assigned to a variable and printed out (try it)::
 
    >>> alist = [2, 0.5, a, 2*b, "banana"]
@@ -139,7 +138,8 @@ We call this whole thing a "for-loop",
 because the computer goes round and round the same instructions,
 once *for* each value.
 
-Let's change it to this. Remember you can save typing using the copy trick,
+Often we want to do this with a list of numbers.
+Remember you can save typing using the copy trick,
 just change ``alist`` to ``range(13)`` and hit return on the last line::
 
    >>> for x in range(13):
@@ -216,23 +216,18 @@ If you keep going like this,
 you will run out of computer memory or patience before Python gives up.
 
 
-Getting more help
-*****************
+And my brain is so small
+************************
 
 Programmers can't possibly know everything about a language.
-Python has thousands of features built-in or in library modules.
-You will need the documentation.
-
-If you are connected to the Internet
-(or have installed the documentation specially)
+(Python has thousands of features.)
+Don't worry, help is at hand.
+If your machine is connected to the Internet
+(or you have the documentation installed specially)
 the IDLE menu "Help" >> "Python Docs" will take you there in a browser.
-If you've followed this project to here,
-you're already up to Chapter 3 of the Tutorial.
 
 .. image:: idle_shell_help.png
 
-
-
-
-
+If you've followed this project to here,
+you're already up to Chapter 3 of the Tutorial.
 
