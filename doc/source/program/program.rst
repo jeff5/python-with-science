@@ -1,7 +1,7 @@
-.. First Steps in Python using RPi - write a program
+.. Write a program
 
-The IDLE editor: write a program
-################################
+IDLE: write a program
+#####################
 
 You're using Python, but you haven't written a program yet.
 A program has instructions like the ones you've typed,
@@ -17,13 +17,13 @@ then open it with IDLE.
 
 On the RPi,
 in your home folder,
-use the file manager to make or find a folder called ``club``.
+use the file manager to make or find a suitable folder (called ``club``, say).
 Go into that folder, then right-click, and make a new file.
 Call it ``first.py``.
 
 Right-click on that file (``first.py``) and open it with Python 3 IDLE.
-This is the editor, where you will type your program.
-To open the shell, use the "Run" menu, or press F5.
+This is the *editor*, where you will type your program.
+To open the *shell* from here, use the "Run" menu, or press F5.
 Try it now.
 
 .. image:: idle_editor_shell_50pc.png
@@ -77,15 +77,15 @@ Let's make a program to draw a triangle with 3 equal sides.
 Change your program so it looks like this:
 
 .. code-block:: python
-    :emphasize-lines: 4-7
+   :emphasize-lines: 4-7
 
-    from turtle import *
-    speed("slowest")
+   from turtle import *
+   speed("slowest")
 
-    a = 100
-    
-    forward(a)
-    left(120)
+   a = 100
+
+   forward(a)
+   left(120)
 
 .. important::
 
@@ -95,21 +95,21 @@ Change your program so it looks like this:
 Then copy those last three lines and paste them so it looks like this:
 
 .. code-block:: python
-    :emphasize-lines: 9-13
-    
-    from turtle import *
-    speed("slowest")
-    
-    a = 100
-    
-    forward(a)
-    left(120)
-    
-    forward(a)
-    left(120)
-    
-    forward(a)
-    left(120)
+   :emphasize-lines: 9-13
+
+   from turtle import *
+   speed("slowest")
+
+   a = 100
+
+   forward(a)
+   left(120)
+
+   forward(a)
+   left(120)
+
+   forward(a)
+   left(120)
 
 Save and run ... you drew a triangle!
 
@@ -120,16 +120,16 @@ We do repetition with a *for-loop*.
 Make your code more elegant like this:
 
 .. code-block:: python
-    :emphasize-lines: 6-8
-    
-    from turtle import *
-    speed("slowest")
-    
-    a = 100
-    
-    for i in range(3):
-        forward(a)
-        left(120)
+   :emphasize-lines: 6-8
+
+   from turtle import *
+   speed("slowest")
+
+   a = 100
+
+   for i in range(3):
+       forward(a)
+       left(120)
 
 Run it to make sure you get the same result.
 
@@ -149,17 +149,17 @@ So now we know how much to turn each time we draw a line.
 In a shape with ``n`` corners, it's ``360/n`` degrees:
 
 .. code-block:: python
-    :emphasize-lines: 5,7,9
-    
-    from turtle import *
-    speed("slowest")
-    
-    a = 100
-    n = 4
-    
-    for i in range(n):
-       forward(a)
-       left(360/n)
+   :emphasize-lines: 5,7,9
+
+   from turtle import *
+   speed("slowest")
+
+   a = 100
+   n = 4
+
+   for i in range(n):
+      forward(a)
+      left(360/n)
 
 Try changing the value ``n`` refers to and running the program again.
 
@@ -169,26 +169,27 @@ Define your own function
 
 You have been happily using functions like ``range``, ``print`` and ``forward``.
 You use a function (we say you *call* it) by giving the name,
-followed by arguments in parentheses ``()``.
-But you can also wrap up a piece of your own code in a function,
+followed by values (called *arguments*) in parentheses ``()``.
+
+You can also wrap up a piece of your own code in a function,
 using the ``def`` keyword.
 It might be code you want to use in several places,
-or even put in a library for someone else.
+or even put in a library for someone else to use.
 
 Here's how to define a function to draw a shape with equal sides.
 You're nearly there already.
 Change your program to look like this:
 
 .. code-block:: python
-    :emphasize-lines: 4-7
+   :emphasize-lines: 4-7
 
-    from turtle import *
-    speed("slowest")
-    
-    def polygon(a, n):
-        for i in range(n):
-            forward(a)
-            left(360/n)
+   from turtle import *
+   speed("slowest")
+
+   def polygon(a, n):
+       for i in range(n):
+           forward(a)
+           left(360/n)
 
 Notice what has happened to ``a`` and ``n``:
 you deleted the lines that give these variables their values.
@@ -204,28 +205,27 @@ You give them their values each time you call the function.
 
 Now, if you run your program ... nothing much happens.
 At the shell prompt (right) try::
-    
-    >>> polygon(50, 3)
-    >>> polygon(50, 4)
-    >>> polygon(50, 5)
+
+   >>> polygon(50, 3)
+   >>> polygon(50, 4)
+   >>> polygon(50, 5)
 
 You should get a triangle, a square and a pentagon.
 (If you got an error message, try to figure out from it where you went wrong.)
-
-Now your shape is a function, you can make a pattern with it.
+Now that your shape is a function, you can make a pattern with it.
 Try::
 
-    >>> clear()
-    >>> for i in range(3):
-            polygon(100, 6)
-            right(120)
-   
+   >>> clear()
+   >>> for i in range(3):
+           polygon(100, 6)
+           right(120)
+
 Try to work out what this does, then run it::
-    
-    >>> clear()
-    >>> for i in range(20):
-            polygon(5*i, 3)
-            left(30)
+
+   >>> clear()
+   >>> for i in range(20):
+           polygon(5*i, 3)
+           left(30)
 
 
 A splash of colour
@@ -234,18 +234,18 @@ A splash of colour
 Our thin black lines are a little dull.
 
 .. sidebar:: What is beautiful?
-   
-   You've reached the point simple drawings turn into pleasing shapes.
+
+   You've reached the point where simple drawings turn into pleasing shapes.
    It's worth asking why.
 
    .. image:: snail.png
       :align: center
-    
+
    We like symmetry, repetition and precision, 
    which are things computers do well.
-   And we like a bit of mystery, which is what your code supplies.
+   And we like to discover a pattern, which is what your code supplies.
    Similarity to things we've seen in nature,
-   and colours that "go together" also make sense to us.
+   and colours that "go together" also make objects look right to us.
 
    One theory is that our human mind is constantly looking for simple
    explanations for what we see.
@@ -253,8 +253,9 @@ Our thin black lines are a little dull.
    but simple enough to make sense.
    The programs here and in projects to come *are* quite simple,
    although you might not guess the program from the picture.
-   In the little universe of the RPi, shapes that resemble nature
-   are called into existence with just a few words.
+
+   In the little universe of our computer,
+   shapes that resemble nature are called into existence with just a few words.
 
 You can change the pen you use, or fill the shapes you draw with colour.
 Notice that the ``turtle`` module uses the American spelling "color".
@@ -262,26 +263,26 @@ Change your program like this, or with some other shapes,
 to try out the colour functions:
 
 .. code-block:: python
-    :emphasize-lines: 2,9-18
+   :emphasize-lines: 2,9-18
 
-    from turtle import *
-    speed("fastest")
-    
-    def polygon(a, n):
-        for i in range(n):
-            forward(a)
-            left(360/n)
-    
-    pencolor("dark green")
-    pensize(5)
-    
-    fillcolor("light green")
-    
-    for i in range(20):
-        begin_fill()
-        polygon(5*i, 3)
-        end_fill()
-        left(30)
+   from turtle import *
+   speed("fastest")
+
+   def polygon(a, n):
+       for i in range(n):
+           forward(a)
+           left(360/n)
+
+   pencolor("dark green")
+   pensize(5)
+
+   fillcolor("light green")
+
+   for i in range(20):
+       begin_fill()
+       polygon(5*i, 3)
+       end_fill()
+       left(30)
 
 It is easy to guess what most of the new functions do.
 The bit that may be puzzling you is how to fill the shape with colour.
@@ -293,13 +294,13 @@ What difference does it make if ``begin_fill`` and ``end_fill``
 are outside the loop, like this:
 
 .. code-block:: python
-    :emphasize-lines: 1,5
+   :emphasize-lines: 1,5
 
-    begin_fill()
-    for i in range(20):
-        polygon(5*i, 3)
-        left(30)
-    end_fill()
+   begin_fill()
+   for i in range(20):
+       polygon(5*i, 3)
+       left(30)
+   end_fill()
 
 
 Read The Friendly Documentation
@@ -311,6 +312,6 @@ All the functions we have used and many more are explained.
 Visit a few you think you understand (like ``forward``),
 then take a look at some you might be interested in trying out.
 
-You won't understand all of it, but don't be put off.
-
+You won't understand all of it, but don't let that put off.
+Try things; make mistakes; learn.
 

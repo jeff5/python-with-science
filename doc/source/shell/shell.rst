@@ -4,8 +4,7 @@ The shell: awesome calculator
 #############################
 
 We can talk directly to Python through a program called "the shell".
-You can run the shell several ways,
-but it suits us to run it by launching IDLE.
+You can run the shell by launching IDLE.
 
 Launching IDLE
 **************
@@ -45,6 +44,15 @@ It could be an easy calculation, or one that's a bit complicated::
    13
    >>> (a+b) * (a-b)
    13
+
+.. hint::
+
+   You will often make mistakes and get rude, red error messages from Python.
+   Don't worry: this is normal in programming.
+   Nothing you do at the shell prompt ``>>>`` is long remembered.
+   Try to guess what you did wrong and try again.
+
+   If the shell prompt doesn't reappear, kill that window and start another shell.
 
 You can make the variable (the name) mean something different any time you like.
 Try::
@@ -222,6 +230,7 @@ And my brain is so small
 Programmers can't possibly know everything about a language.
 (Python has thousands of features.)
 Don't worry, help is at hand.
+
 If your machine is connected to the Internet
 (or you have the documentation installed specially)
 the IDLE menu "Help" >> "Python Docs" will take you there in a browser.
