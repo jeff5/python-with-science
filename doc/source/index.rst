@@ -41,6 +41,7 @@ Contents
 
    shell/shell
    program/program
+   spiral/spiral
 
 
 .. Generated but not sure I need them
