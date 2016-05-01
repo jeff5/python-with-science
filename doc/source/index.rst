@@ -43,6 +43,7 @@ Contents
    program/program
    spiral/spiral
    colour_square/colour_square
+   colour_wheel/colour_wheel
 
 
 .. Generated but not sure I need them
