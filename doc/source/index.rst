@@ -44,6 +44,7 @@ Contents
    spiral/spiral
    colour_square/colour_square
    colour_wheel/colour_wheel
+   koch_fractal/koch_fractal
 
 
 .. Generated but not sure I need them

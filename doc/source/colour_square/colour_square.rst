@@ -1,4 +1,4 @@
-.. First Steps in Python using RPi - RGB Colour Square
+.. RGB Colour Square
 
 Colour in the computer
 ######################
