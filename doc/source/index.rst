@@ -45,6 +45,7 @@ Contents
    colour_square/colour_square
    colour_wheel/colour_wheel
    koch_fractal/koch_fractal
+   cyclic_trochoid/cyclic_trochoid
 
 
 .. Generated but not sure I need them
