@@ -42,6 +42,7 @@ Contents
    shell/shell
    program/program
    spiral/spiral
+   colour_square/colour_square
 
 
 .. Generated but not sure I need them
