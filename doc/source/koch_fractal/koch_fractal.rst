@@ -104,20 +104,6 @@ The order 4 curve has 256 tiny lines.
 One thing that happens is that it starts to take a long time to draw.
 A call to ``speed("fastest")`` before you start drawing will help.
 
-
-Need for speed
-**************
-
-The drawing is still too slow once ``order`` is 6 or more.
-(The calculation is fast.)
-The ``turtle`` module wants to show you every change as it is happening:
-good when debugging,
-not so good when you just want the result.
-
-We can delay putting the actions on the screen with the ``tracer`` function.
-But then we have to tell it to appear using the ``update`` function,
-when we're ready.
-
 .. sidebar:: The real Koch Curve
 
    Helge von Koch was a Swedish mathematician.
@@ -149,6 +135,20 @@ when we're ready.
    You can easily see how *recursion* makes that happen.
    In the code we have to stop eventually;
    in the real Koch curve, it goes on forever.
+
+
+Need for speed
+**************
+
+The drawing is still too slow once ``order`` is 6 or more.
+(The calculation is fast.)
+The ``turtle`` module wants to show you every change as it is happening:
+good when debugging,
+not so good when you just want the result.
+
+We can delay putting the actions on the screen with the ``tracer`` function.
+But then we have to tell it to appear using the ``update`` function,
+when we're ready.
 
 
 Looks like snow

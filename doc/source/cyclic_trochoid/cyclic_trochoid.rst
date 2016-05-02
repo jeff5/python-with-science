@@ -55,6 +55,38 @@ but it is not a *method* of ``Turtle`` objects.
 Setting up the guide turtles
 ****************************
 
+.. sidebar:: Calculating with positions
+
+   A position is described with two numbers ``(x,y)``.
+   ``x`` is how far it is right of home,
+   and ``y`` is how far it is up from home.
+   We call this pair a *vector*.
+   A movement,
+   from one position to another,
+   is a vector too: move ``x`` right, and ``y`` up.
+
+   What was going on when you typed this?
+
+   .. code-block:: python
+
+       >>> mid = (1/2) * (p+q)
+
+   When you add two vectors,
+   Python knows to add the x-parts together to get the x-part of the result,
+   then the same with the y-parts::
+
+       >>> p+q
+       (150.00,50.00)
+
+   Subtraction works the same way.
+   You can also multiply a number (called a *scalar*)
+   and a vector together::
+
+       >>> (1/2) * (p+q)
+       (75.00,25.00)
+
+   Congratulations, you just learned some year 10 maths!
+
 We need two "guide" turtles,
 each of which draws a circle.
 Each has to be set up a certain distance from home,
@@ -93,38 +125,6 @@ You should see this:
 The unnamed turtle (black)
 has moved halfway between start and end of the blue arc.
 
-.. sidebar:: Calculating with positions
-
-   A position is described with two numbers ``(x,y)``.
-   ``x`` is how far it is right of home,
-   and ``y`` is how far it is up from home.
-   We call this pair a *vector*.
-   A movement,
-   from one position to another,
-   is a vector too: move ``x`` right, and ``y`` up.
-
-   What was going on when you typed this?
-
-   .. code-block:: python
-
-       >>> mid = (1/2) * (p+q)
-
-   When you add two vectors,
-   Python knows to add the x-parts together to get the x-part of the result,
-   then the same with the y-parts::
-
-       >>> p+q
-       (150.00,50.00)
-
-   Subtraction works the same way.
-   You can also multiply a number (called a *scalar*)
-   and a vector together::
-
-       >>> (1/2) * (p+q)
-       (75.00,25.00)
-
-   Congratulations, you just learned some year 10 maths!
-
 
 Moving the guides
 *****************
@@ -151,6 +151,7 @@ The first job is to make the guides move in their orbits.
 
 Save and run.
 You should see blue and red circles drawn.
+
 The blue turtle goes round L=3 times, and the red turtle M=2 times.
 You can see how this works in the code.
 ``N`` just has to be a big enough number to make the final curve smooth.
@@ -167,6 +168,7 @@ Compute the shape
 
 The shape we are looking for is drawn by
 keeping our pen mid-way between the two guides.
+
 **Change** the ``epitrochoid`` function to add these lines:
 
 .. code-block:: python
@@ -196,35 +198,6 @@ keeping our pen mid-way between the two guides.
 
 Save and run.
 You should see this:
-
-.. sidebar:: Roman astronomy
-
-   Early astronomers took the Earth to be stationary,
-   with the Sun, Moon and planets moving round it.   
-   If you take careful measurements of the position of a planet in the sky,
-   you find it speeds up, slows down, and sometimes travels backwards.
-   The Roman astronomer Ptolemy (around AD 145)
-   deduced from this that the planets moved in cycles
-   like the ones you are drawing.
-
-   .. image:: 244px-Cassini_apparent.jpg
-      :align: center
-
-   In this theory,
-   the orbit of Venus has the shape you get from::
-
-       epitrochoid(230, 300, 13, 8)
-
-   .. image:: epi_venus.png
-      :align: center
-      :width: 100%
-
-   This theory was followed until the 16th century,
-   when the telescope let us see the planets more clearly.
-   Then we understood that the Earth and Venus both orbit the Sun,
-   in (nearly) circular paths.
-   The *difference* of these two circles is the motion the ancients observed.
-
 
 .. image:: epi_90_100_3_2.png
 
@@ -263,6 +236,33 @@ and style the unnamed turtle to your liking:
    epitrochoid(90, 100, 3, 2)
 
    hideturtle()
+
+.. sidebar:: Roman astronomy
+
+   Early astronomers took the Earth to be stationary,
+   with the Sun, Moon and planets moving round it.   
+   If you take careful measurements of the position of a planet in the sky,
+   you find it speeds up, slows down, and sometimes travels backwards.
+   The Roman astronomer Ptolemy (around AD 145)
+   deduced from this that the planets moved in cycles
+   like the ones you are drawing.
+
+   .. image:: 244px-Cassini_apparent.jpg
+      :align: center
+
+   In this theory,
+   the orbit of Venus has the shape you get from::
+
+       epitrochoid(230, 300, 13, 8)
+
+   .. image:: epi_venus.png
+      :align: center
+      :width: 100%
+
+   In the 16th century,
+   when the telescope let us see the planets more clearly,
+   we understood that the Earth and Venus both orbit the Sun,
+   The *difference* of these two orbits is the motion Ptolemy observed.
 
 
 
@@ -321,16 +321,17 @@ this code project poses some interesting questions.
 * What determines the number of loops?
 * What values for ``a`` and ``b`` make the curve pass through (0,0)?
   (Hint: where would the guide turtles be at that moment?)
-  A shape in this family is called a "rose".
+
+A shape in this family, where the curve passes through zero, is called a "rose".
 
 .. image:: epi_200_200_6.png
    :align: center
-   :scale: 50%
+   :scale: 80%
 
 * When do the loops become points?
 * Both curves below have 3 loops: what is the difference between them?
 
 .. image:: epi_200_300_4_1.png
    :align: center
-   :scale: 50%
+   :scale: 60%
 

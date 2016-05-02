@@ -6,9 +6,7 @@ Colour gets arty
 This project looks at colour the way a website developer
 or graphic artist might.
 It draws a colour wheel using hue and lightness.
-
-It assumes you know about for-loops and functions.
-And it makes use of named and default arguments to functions.
+It makes use of named and default arguments to functions.
 It is helpful to have done the RGB colour project, but not essential.
 
 
@@ -19,7 +17,6 @@ Colour is stored in your computer
 in the same way that it is put on your screen:
 as amounts of red, green and blue light.
 This is called the RGB model.
-
 You may already have looked at this in the RGB colour project.
 
 If you are a web designer,
@@ -35,35 +32,6 @@ You might prefer to think in these terms:
 This is called the HSL model.
 In this project you will use the Python library module called ``colorsys``
 to convert from HSL to the RGB model that ``turtle`` needs.
-
-.. sidebar:: Colour in website design
-
-   .. image:: hsl_24.png
-      :align: center
-
-   Web designers take a lot of care over the colours they use.
-   One simple way to get a pleasing set of colours
-   is to choose the same hue for all of them.
-
-   Here is a set of 5 colours that all have the same hue (0.3),
-   but have different saturation and lightness:
-
-   .. image:: hsl_palette.png
-      :align: center
-
-   .. in web terms these are:
-       #41a328
-       #234c19
-       #c2dbbc
-       #6ee051
-       #32ff00
-
-   A designer might use the first three for headings, text and background,
-   and the last two for boxes and graphical highlights.
-   The use of a single hue means all the colours go well together.
-   The different saturation and lightness ensure that
-   text can be read against the page background
-   and a small amount of the brightest colour catches the eye.
 
 
 A colour wheel
@@ -107,6 +75,35 @@ You should see a blue sector:
 In the function call, we specified the colour as an RGB tuple ``(0,0,1)``,
 meaning no red, no green, and ``1`` full unit of blue.
 (The numbers in a colour tuple are fractions that run from zero to one.)
+
+.. sidebar:: Colour in website design
+
+   .. image:: hsl_24.png
+      :align: center
+
+   Web designers take a lot of care over the colours they use.
+   One simple way to get a pleasing set of colours
+   is to choose the same hue for all of them.
+
+   Here is a set of 5 colours that all have the same hue (0.3),
+   but have different saturation and lightness:
+
+   .. image:: hsl_palette.png
+      :align: center
+
+   .. in web terms these are:
+       #41a328
+       #234c19
+       #c2dbbc
+       #6ee051
+       #32ff00
+
+   A designer might use the first three for headings, text and background,
+   and the last two for boxes and graphical highlights.
+   The use of a single hue means all the colours go well together.
+   The different saturation and lightness ensure that
+   text can be read against the page background
+   and a small amount of the brightest colour catches the eye.
 
 Now we want to piece together a circle
 from sectors of different colour.

@@ -18,11 +18,18 @@ Make sure you pick IDLE 3.
 This will open a "shell" window like this:
 
 .. image:: idle_shell.png
+   :scale: 90%
 
 Python is ready to do things for you.
 At the ``>>>`` prompt type ``6*7``.
 The star ``*`` means multiplication.
 Python will reply with the answer 42.
+
+.. hint::
+
+   You will often make mistakes and get rude, red error messages from Python.
+   Don't worry: this is normal in programming.
+   Try to guess what you did wrong and try again at the next ``>>>`` prompt.
 
 Now try this::
       
@@ -34,44 +41,6 @@ Now try this::
 ``a`` and ``b`` are *variables*.
 A variable is just a name you use for a value that matters to you.
 The ``=`` means "make the name refer to this value".
-
-When we tell Python to do a calculation,
-instead of a number,
-we can use a variable that refers to the number.
-It could be an easy calculation, or one that's a bit complicated::
-
-   >>> a + b
-   13
-   >>> (a+b) * (a-b)
-   13
-
-.. hint::
-
-   You will often make mistakes and get rude, red error messages from Python.
-   Don't worry: this is normal in programming.
-   Nothing you do at the shell prompt ``>>>`` is long remembered.
-   Try to guess what you did wrong and try again.
-
-   If the shell prompt doesn't reappear, kill that window and start another shell.
-
-You can make the variable (the name) mean something different any time you like.
-Try::
-
-   >>> a = 116
-
-Let's re-calculate the complicated expression, but without typing.
-In the IDLE shell, you can re-use lines you typed earlier.
-Put the cursor on the line that says ``(a+b) * (a-b)``,
-using the mouse or the arrow keys,
-and press enter.
-This makes a copy of that line at the prompt, as if you had typed it.
-Press enter again, and Python will work it out::
-
-   >>> (a+b) * (a-b)
-   13420
-
-This time, the meaning of ``a`` is different,
-so you get a different answer.
 
 .. sidebar:: About names for variables
 
@@ -91,6 +60,35 @@ so you get a different answer.
    for variables that are not needed for long.
    When a variable will be used in lots of places,
    they use long helpful names to remind them what it means.
+
+When we tell Python to do a calculation,
+instead of a number,
+we can use a variable that refers to the number.
+It could be an easy calculation, or one that's a bit complicated::
+
+   >>> a + b
+   13
+   >>> (a+b) * (a-b)
+   13
+
+You can make the variable (the name) mean something different any time you like.
+Try::
+
+   >>> a = 116
+
+Let's re-calculate the complicated expression, but without typing.
+In the IDLE shell, you can re-use lines you typed earlier.
+Put the cursor on the line that says ``(a+b) * (a-b)``,
+using the mouse or the arrow keys,
+and press enter.
+This makes a copy of that line at the prompt, as if you had typed it.
+Press enter again, and Python will work it out::
+
+   >>> (a+b) * (a-b)
+   13420
+
+This time, the meaning of ``a`` is different,
+so you get a different answer.
 
 A variable can refer to any kind of information.
 Sometimes you want to refer to a *string* of text.

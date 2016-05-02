@@ -5,6 +5,7 @@
 .project
 .pydevproject
 .settings/
+.externalToolBuilders/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

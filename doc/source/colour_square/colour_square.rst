@@ -38,6 +38,21 @@ You should get a filled square of size 50.
 
 .. image:: square1.png
 
+This command,
+and the code in most other projects in this set,
+select colours by name.
+It is difficult to know what names you can use,
+or what they mean.
+(Look up "X11 colour names" in Wikipedia
+if you care about the difference between
+"light goldenrod" and "papaya whip".)
+
+Run the program again, just to clear the screen, and type::
+
+   >>> square(50, (.2, .8, .2) )
+
+You should get exactly the same filled square as before.
+
 .. sidebar:: RGB colour in web pages
 
    On web pages,
@@ -59,21 +74,6 @@ You should get a filled square of size 50.
    "lime green" is ``#50CD50``.
    Python ``turtle`` can understand these hexadecimal colours too,
    but humans shouldn't have to.
-
-This command,
-and the code in most other projects in this set,
-select colours by name.
-It is difficult to know what names you can use,
-or what they mean.
-(Look up "X11 colour names" in Wikipedia
-if you care about the difference between
-"light goldenrod" and "papaya whip".)
-
-Run the program again, just to clear the screen, and type::
-
-   >>> square(50, (.2, .8, .2) )
-
-You should get exactly the same filled square as before.
 
 In the ``turtle`` module,
 the names for colours are turned into 3 numbers,
@@ -106,6 +106,44 @@ then change the parts that should be different.
 An RGB colour square
 ********************
 
+Let's write a program to experiment some more with RGB colours.
+
+We need a program that will step though colour combinations,
+and show each of them to us.
+Because there are three colours, this is a little messy,
+but for two colours we can make a grid of little squares.
+**Add** this function to your code:
+
+.. code-block:: python
+   :emphasize-lines: 6, 11
+
+   def rg_square(a, blue=0, N=10):
+       # N+1 little squares wide so ...
+       a = a/(N+1)
+       start = position()
+       for i in range(N+1):
+           green = i/N
+           # Go to start of row i
+           setposition( start + (0,i*a) )
+           for j in range(N+1):
+               # Draw square j on row i
+               red = j/N
+               c = (red, green, blue)
+               square(a, c)
+               forward(a)
+       setposition(start)
+
+And at the end **add** this short program to your code:
+
+.. code-block:: python
+
+   # Program
+   hideturtle()
+   penup()
+   speed("fastest")
+
+   rg_square(200)
+
 .. sidebar:: Red + green = yellow?!
 
    .. image:: rg_square.png
@@ -135,42 +173,6 @@ An RGB colour square
 
    There are infinitely more colours in real life
    than human eyes can see, or your monitor produce.
-
-Let's write a program to experiment some more with RGB colours.
-
-We need a program that will step though colour combinations,
-and show each of them to us.
-Because there are three colours, this is a little messy,
-but for two colours we can make a grid of little squares.
-**Add** this function,
-and short program,
-to your code:
-
-.. code-block:: python
-   :emphasize-lines: 6, 11
-
-   def rg_square(a, blue=0, N=10):
-       # N+1 little squares wide so ...
-       a = a/(N+1)
-       start = position()
-       for i in range(N+1):
-           green = i/N
-           # Go to start of row i
-           setposition( start + (0,i*a) )
-           for j in range(N+1):
-               # Draw square j on row i
-               red = j/N
-               c = (red, green, blue)
-               square(a, c)
-               forward(a)
-       setposition(start)
-
-   # Program
-   hideturtle()
-   penup()
-   speed("fastest")
-
-   rg_square(200)
 
 There are two loops in ``rg_square``,
 one inside the other.
