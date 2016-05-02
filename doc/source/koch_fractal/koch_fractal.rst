@@ -3,8 +3,8 @@
 The Koch Snowflake
 ##################
 
-This project draws fractal curve,
-using only a few lines of turtle graphics code.
+This project draws a fractal curve,
+with only a few lines of turtle graphics code.
 It assumes you know about for-loops and functions.
 And it introduces the computer science idea of recursion.
 
@@ -108,6 +108,16 @@ A call to ``speed("fastest")`` before you start drawing will help.
 Need for speed
 **************
 
+The drawing is still too slow once ``order`` is 6 or more.
+(The calculation is fast.)
+The ``turtle`` module wants to show you every change as it is happening:
+good when debugging,
+not so good when you just want the result.
+
+We can delay putting the actions on the screen with the ``tracer`` function.
+But then we have to tell it to appear using the ``update`` function,
+when we're ready.
+
 .. sidebar:: The real Koch Curve
 
    Helge von Koch was a Swedish mathematician.
@@ -139,16 +149,6 @@ Need for speed
    You can easily see how *recursion* makes that happen.
    In the code we have to stop eventually;
    in the real Koch curve, it goes on forever.
-
-The drawing is still too slow once ``order`` is 6 or more.
-(The calculation is fast.)
-The ``turtle`` module wants to show you every change as it is happening:
-good when debugging,
-not so good when you just want the result.
-
-We can delay putting the actions on the screen with the ``tracer`` function.
-But then we have to tell it to appear using the ``update`` function,
-when we're ready.
 
 
 Looks like snow
