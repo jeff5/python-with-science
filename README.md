@@ -1,6 +1,5 @@
 # python-with-science
-Introductory Python tutorial with a bias to science and maths
-
+Introductory Python tutorial with a bias to science and maths.
 This work is published at
 [Read the Docs](https://python-with-science.readthedocs.io),
 enjoy it there.
@@ -27,7 +26,6 @@ Using base prefix '...
 New python executable in ...\venv\Scripts\python.exe
 Installing setuptools, pip, wheel...
 done.
-```
 PS doc> .\venv\Scripts\activate
 (venv) PS doc> pip install sphinx
 Collecting sphinx
