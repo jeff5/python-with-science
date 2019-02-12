@@ -12,111 +12,94 @@ It introduces the idea of an object and its methods.
 Turtles, turtles, turtles
 *************************
 
-Start the project by making an empty file ``loo.py``.
-Right-click and open it with IDLE.
-Type in the editor::
+.. _empty Trinket: https://trinket.io/embed/python
 
-   # Fun with epitrochoids
-   from turtle import *
-
-In the introduction we used only one turtle,
-and so your commands like ``forward`` and ``left``,
+In earlier projects we used only one turtle, with no name,
+and your commands like ``forward`` and ``left``,
 went to that unnamed turtle.
 Here you'll create two other turtles,
 and send your commands to each of them by name.
 
-Let's see how this works.
-Save and run your program,
-so the ``import`` happens and the shell opens.
+First, let's see how this works.
+Start the project with an `empty Trinket`_.
+Type in the editor::
+
+   # Epitrochoids
+   from turtle import *
+
+   # Test
+   ted = Turtle()
+
 This is how you make a new turtle,
 and a variable ``ted`` to refer to it.
-Try this in the shell window::
+Now we can give ``ted`` the turtle some things to do.
+**Add** and run this::
 
-   >>> ted = Turtle()
+   ted.color("blue")
+   ted.left(60)
+   ted.forward(100)
 
-Now we can give ``ted`` the turtle some things to do::
-
-   >>> ted.color("blue")
-   >>> ted.left(60)
-   >>> ted.forward(100)
-
-These instructions are just like function calls.
+These instructions work like function calls, but addressed to ``ted``.
 A function addressed to a particular object is called a *method*.
 The dot ``.`` is how you address a *method* to an object in Python.
-It has to be something the object knows how to do, so::
+It has to be something the object knows how to do,
+so you can't say ``ted.print()``.
+The unnamed turtle is still there and waiting for your instructions::
 
-   >>> ted.print()
+   forward(100)
 
-raises an error.
-``print`` is a valid *function*,
-but it is not a *method* of ``Turtle`` objects.
+**Delete** the test code so your Trinket looks like this again::
 
+   # Epitrochoids
+   from turtle import *
+
+   # Test
 
 Setting up the guide turtles
 ****************************
 
-.. sidebar:: Calculating with positions
-
-   A position is described with two numbers ``(x,y)``.
-   ``x`` is how far it is right of home,
-   and ``y`` is how far it is up from home.
-   We call this pair a *vector*.
-   A movement,
-   from one position to another,
-   is a vector too: move ``x`` right, and ``y`` up.
-
-   What was going on when you typed this?
-
-   .. code-block:: python
-
-       >>> mid = (1/2) * (p+q)
-
-   When you add two vectors,
-   Python knows to add the x-parts together to get the x-part of the result,
-   then the same with the y-parts::
-
-       >>> p+q
-       (150.00,50.00)
-
-   Subtraction works the same way.
-   You can also multiply a number (called a *scalar*)
-   and a vector together::
-
-       >>> (1/2) * (p+q)
-       (75.00,25.00)
-
-   Congratulations, you just learned some year 10 maths!
-
-We need two "guide" turtles,
+For the next part,
+we need two "guide" turtles,
 each of which draws a circle.
-Each has to be set up a certain distance from home,
-so **add** this function to your code:
+Each has guide to be set up a certain distance from home,
+so **add** these two functions to your code (above ``# Test``),
+so it looks like this:
 
 .. code-block:: python
-   :emphasize-lines: 3, 11
+
+   # Epitrochoids
+   from turtle import *
 
    def new_guide(r, c):
-       "Return a new guide turtle of radius r and colour c"
-       t = Turtle()
-       t.speed("fastest")
-       t.color(c)
-       # Go to (r,0) without drawing
-       t.penup()
-       t.setposition(r,0)
-       t.left(90)
-       t.pendown()
-       return t
+     "Return a new guide turtle of radius r and colour c"
+     t = Turtle()
+     t.speed("fastest")
+     t.color(c)
+     # Go to (r,0) without drawing
+     t.penup()
+     t.setposition(r,0)
+     t.left(90)
+     t.pendown()
+     return t
 
-Notice this function *returns* a turtle.
-Save and run, then try this in the shell::
+   def mid(p, q):
+     "Half way between positions p and q"
+     x = (p[0] + q[0]) / 2
+     y = (p[1] + q[1]) / 2
+     return x, y
 
-   >>> g = new_guide(100, "blue")
-   >>> p = g.position()
-   >>> g.circle(50, 90)
-   >>> q = g.position()
-   >>> 
-   >>> mid = (1/2) * (p+q)
-   >>> setposition(mid)
+   # Test
+
+Notice that the ``new_guide`` function *returns* a turtle.
+**Add** this code starting after ``# Test`` and run the program:
+
+.. code-block:: python
+
+   g = new_guide(100, "blue")
+   start = g.position()
+   g.circle(50, 90)
+   end = g.position()
+   setposition(mid(start,end))
 
 You should see this:
 
@@ -124,32 +107,32 @@ You should see this:
 
 The unnamed turtle (black)
 has moved halfway between start and end of the blue arc.
+When that works, **delete** the test code again.
 
 
 Moving the guides
 *****************
 
 The first job is to make the guides move in their orbits.
-**Add** this to your program at the end:
+**Add** this function to your program,
+and call it as a test:
 
 .. code-block:: python
 
    def epitrochoid(a, b, L, M=1):
-       ta = new_guide(a, "blue")
-       tb = new_guide(b, "red")
-       # N little steps s make one circle
-       N = 500
-       s = 360/N
-       for i in range(N):
-           # ta will go L times round
-           ta.circle(a, L*s)
-           # tb will go M times round
-           tb.circle(b, M*s)
+     ta = new_guide(a, "blue")
+     tb = new_guide(b, "red")
+     # N little steps s make one circle
+     N = 500
+     s = 360/N
+     for i in range(N):
+       ta.circle(a, L*s)
+       tb.circle(b, M*s)
 
    # Test
    epitrochoid(90, 100, 3, 2)
 
-Save and run.
+Run that.
 You should see blue and red circles drawn.
 
 The blue turtle goes round L=3 times, and the red turtle M=2 times.
@@ -167,34 +150,28 @@ Compute the shape
 *****************
 
 The shape we are looking for is drawn by
-keeping our pen mid-way between the two guides.
+keeping our unnamed turte mid-way between the two guide turtles.
 
-**Change** the ``epitrochoid`` function to add these lines:
+**Add** lines to the ``epitrochoid`` function so it reads like this:
 
 .. code-block:: python
-   :emphasize-lines: 2, 5-11, 20-21
+   :emphasize-lines: 4-7, 14-15
 
    def epitrochoid(a, b, L, M=1):
-       "Epitrochoid: a, b are guide radii; L, M the number of orbits."
-       ta = new_guide(a, "blue")
-       tb = new_guide(b, "red")
-       # Local function for midpoint between the guides
-       def midpoint():
-           return (1/2) * (ta.position() + tb.position())
-       # Set start position for unnamed turtle
-       penup()
-       setposition(midpoint())
-       pendown()
-       # N little steps s make one circle
-       N = 500
-       s = 360/N
-       for i in range(N):
-           # ta will go L times round
-           ta.circle(a, L*s)
-           # tb will go M times round
-           tb.circle(b, M*s)
-           # unnamed will be half-way between them
-           setposition(midpoint())
+     ta = new_guide(a, "blue")
+     tb = new_guide(b, "red")
+     # Set start position for unnamed turtle
+     penup()
+     setposition((a+b)/2, 0)
+     pendown()
+     # N little steps s make one circle
+     N = 500
+     s = 360/N
+     for i in range(N):
+       ta.circle(a, L*s)
+       tb.circle(b, M*s)
+       m = mid(ta.pos(), tb.pos())
+       setposition(m)
 
 Save and run.
 You should see this:
@@ -206,33 +183,35 @@ Tidy up
 *******
 
 It would be nice if the guide circles were not on the final drawing.
-**Add** this tidy-up code at the end of ``epitrochoid``,
-and style the unnamed turtle to your liking:
+**Change** the function ``new_guide``,
+so guide turtles are invisiible (``hideturtle``)
+and do not draw (do not ``pendown``).
 
 .. code-block:: python
-   :emphasize-lines: 8-10, 12-15, 17-19, 24
+   :emphasize-lines: 10-11
 
-   def epitrochoid(a, b, L, M=1):
+   def new_guide(r, c):
+     "Return a new guide turtle of radius r and colour c"
+     t = Turtle()
+     t.speed("fastest")
+     t.color(c)
+     # Go to (r,0) without drawing
+     t.penup()
+     t.setposition(r,0)
+     t.left(90)
+     t.hideturtle()
+     #t.pendown()
+     return t
 
-       ta = new_guide(a, "blue")
-       tb = new_guide(b, "red")
-       .
-       .
-       .
-       # Erase guides
-       guide_erase(ta)
-       guide_erase(tb)
 
-   def guide_erase(t):
-       "Erase what turtle t drew"
-       t.hideturtle()
-       t.clear()
+Style the unnamed turtle to your liking:
 
+.. code-block:: python
+
+   # Test
    speed("fastest")
    width(5)
    color("lime green")
-
-   # Test
    epitrochoid(90, 100, 3, 2)
 
    hideturtle()
@@ -253,7 +232,7 @@ and style the unnamed turtle to your liking:
    In this theory,
    the orbit of Venus has the shape you get from::
 
-       epitrochoid(230, 300, 13, 8)
+       epitrochoid(150, 200, 13, 8)
 
    .. image:: epi_venus.png
       :align: center
@@ -271,7 +250,7 @@ Inspiring examples
 
 Try changing the numbers in the call to ``epitrochoid`` like this::
 
-   a, b = 100, 300
+   a, b = 50, 150
    epitrochoid(a, b, 4)
    color("goldenrod")
    epitrochoid(a, b, 5)
@@ -281,7 +260,7 @@ Try changing the numbers in the call to ``epitrochoid`` like this::
 (Remember, M=1 if you don't give a fourth argument.)
 Suppose you change just one line now::
 
-   a, b = -100, 300
+   a, b = -50, 150
 
 and run again. When the loops point outwards,
 the shape is called a hypotrochoid.
@@ -302,7 +281,7 @@ And what about here?
 .. code-block:: python
 
    L = 6
-   a, x = 50, 80
+   a, x = 20, 50
    epitrochoid(a, L*a, L)
    color("goldenrod")
    epitrochoid(a, L*a + x, L)

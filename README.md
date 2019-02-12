@@ -1,11 +1,14 @@
-# python-with-science
-Introductory Python tutorial with a bias to science and maths.
-This work is published at
-[Read the Docs](https://python-with-science.readthedocs.io),
-enjoy it there.
+# python-with-science (trinket version)
 
-If, for some reason, you want to build the project on your own machine,
-read on below.
+Introductory Python tutorial with a bias to science and maths.
+The branch you are looking at has been modified for groups using
+[Trinket](https://trinket.io/python-new)
+a website that allows Python with turtle graphics to run anywhere on the web.
+
+The version of Python at Trinket (at least, the free version) is limited.
+The `turtle` module in particular
+behaves differently from that in the Python 3 standard library.
+This branch is under development to provide a trinket-friendly version.
 
 ## Building the project
 
