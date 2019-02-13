@@ -18,7 +18,7 @@ In earlier projects we used only one turtle, with no name,
 and your commands like ``forward`` and ``left``,
 went to that unnamed turtle.
 Here you'll create two other turtles,
-and send your commands to each of them by name.
+and send commands to each of them by name.
 
 First, let's see how this works.
 Start the project with an `empty Trinket`_.
@@ -43,7 +43,7 @@ These instructions work like function calls, but addressed to ``ted``.
 A function addressed to a particular object is called a *method*.
 The dot ``.`` is how you address a *method* to an object in Python.
 It has to be something the object knows how to do,
-so you can't say ``ted.print()``.
+so you can't say ``ted.print()``, because turtles don't know that word.
 The unnamed turtle is still there and waiting for your instructions::
 
    forward(100)
@@ -61,7 +61,7 @@ Setting up the guide turtles
 For the next part,
 we need two "guide" turtles,
 each of which draws a circle.
-Each has guide to be set up a certain distance from home,
+Each guide has to be set up a certain distance from home,
 so **add** these two functions to your code (above ``# Test``),
 so it looks like this:
 
@@ -75,11 +75,13 @@ so it looks like this:
      t = Turtle()
      t.speed("fastest")
      t.color(c)
+
      # Go to (r,0) without drawing
      t.penup()
      t.setposition(r,0)
      t.left(90)
      t.pendown()
+
      return t
 
    def mid(p, q):
@@ -101,6 +103,9 @@ Notice that the ``new_guide`` function *returns* a turtle.
    end = g.position()
    setposition(mid(start,end))
 
+In that last line we did two things at one:
+the ``mid`` function calculates the half-way point between ``start`` and ``end``,
+then ``setposition`` takes your unnamed turtle there.
 You should see this:
 
    .. image:: epi_midpoint.png
@@ -122,6 +127,7 @@ and call it as a test:
    def epitrochoid(a, b, L, M=1):
      ta = new_guide(a, "blue")
      tb = new_guide(b, "red")
+
      # N little steps s make one circle
      N = 500
      s = 360/N
@@ -155,15 +161,17 @@ keeping our unnamed turte mid-way between the two guide turtles.
 **Add** lines to the ``epitrochoid`` function so it reads like this:
 
 .. code-block:: python
-   :emphasize-lines: 4-7, 14-15
+   :emphasize-lines: 5-9, 16-17
 
    def epitrochoid(a, b, L, M=1):
      ta = new_guide(a, "blue")
      tb = new_guide(b, "red")
+
      # Set start position for unnamed turtle
      penup()
      setposition((a+b)/2, 0)
      pendown()
+
      # N little steps s make one circle
      N = 500
      s = 360/N
@@ -173,10 +181,44 @@ keeping our unnamed turte mid-way between the two guide turtles.
        m = mid(ta.pos(), tb.pos())
        setposition(m)
 
-Save and run.
+Run the code.
 You should see this:
 
 .. image:: epi_90_100_3_2.png
+
+
+
+.. sidebar:: Roman astronomy
+
+   Early astronomers took the Earth to be stationary,
+   with the Sun, Moon and planets moving round it.   
+   If you take careful measurements of the position of a planet in the sky,
+   you find it speeds up, slows down, and sometimes travels backwards.
+   The Roman astronomer Ptolemy (around AD 145)
+   deduced from this that the planets moved in cycles
+   like the ones you are drawing.
+
+   .. image:: 244px-Cassini_apparent.jpg
+      :align: center
+      :height: 220px
+
+   In this theory,
+   the orbit of Venus has the shape you get from::
+
+       epitrochoid(150, 200, 13, 8)
+
+   This is because Venus is about 3/4 the distance of Earth from the Sun,
+   and goes around the Sun 13 times in 8 Earth years.
+
+   .. image:: epi_venus.png
+      :align: center
+      :height: 220px
+
+   In the 16th century,
+   when the telescope let us see the planets more clearly,
+   we understood that the Earth and Venus both orbit the Sun.
+   The *difference* of these two orbits is the motion Ptolemy observed.
+
 
 
 Tidy up
@@ -188,19 +230,21 @@ so guide turtles are invisiible (``hideturtle``)
 and do not draw (do not ``pendown``).
 
 .. code-block:: python
-   :emphasize-lines: 10-11
+   :emphasize-lines: 11-12
 
    def new_guide(r, c):
      "Return a new guide turtle of radius r and colour c"
      t = Turtle()
      t.speed("fastest")
      t.color(c)
+
      # Go to (r,0) without drawing
      t.penup()
      t.setposition(r,0)
      t.left(90)
      t.hideturtle()
      #t.pendown()
+
      return t
 
 
@@ -216,34 +260,6 @@ Style the unnamed turtle to your liking:
 
    hideturtle()
 
-.. sidebar:: Roman astronomy
-
-   Early astronomers took the Earth to be stationary,
-   with the Sun, Moon and planets moving round it.   
-   If you take careful measurements of the position of a planet in the sky,
-   you find it speeds up, slows down, and sometimes travels backwards.
-   The Roman astronomer Ptolemy (around AD 145)
-   deduced from this that the planets moved in cycles
-   like the ones you are drawing.
-
-   .. image:: 244px-Cassini_apparent.jpg
-      :align: center
-
-   In this theory,
-   the orbit of Venus has the shape you get from::
-
-       epitrochoid(150, 200, 13, 8)
-
-   .. image:: epi_venus.png
-      :align: center
-      :width: 100%
-
-   In the 16th century,
-   when the telescope let us see the planets more clearly,
-   we understood that the Earth and Venus both orbit the Sun,
-   The *difference* of these two orbits is the motion Ptolemy observed.
-
-
 
 Inspiring examples
 ******************
@@ -252,8 +268,10 @@ Try changing the numbers in the call to ``epitrochoid`` like this::
 
    a, b = 50, 150
    epitrochoid(a, b, 4)
+
    color("goldenrod")
    epitrochoid(a, b, 5)
+
    color("sienna")
    epitrochoid(a, b, 6)
 
@@ -271,8 +289,10 @@ What's happening here?
 
    a, b = 250, 300
    epitrochoid(a, b, 4)
+
    color("goldenrod")
    epitrochoid(a, b, 5)
+
    color("sienna")
    epitrochoid(a, b, 6)
 
@@ -283,8 +303,10 @@ And what about here?
    L = 6
    a, x = 20, 50
    epitrochoid(a, L*a, L)
+
    color("goldenrod")
    epitrochoid(a, L*a + x, L)
+
    color("sienna")
    epitrochoid(a, L*a - x, L)
 
@@ -309,6 +331,8 @@ A shape in this family, where the curve passes through zero, is called a "rose".
 
 * When do the loops become points?
 * Both curves below have 3 loops: what is the difference between them?
+  (Hint: imagine you are standing in the middle, then walk to the outside.
+  What is the smallest number of green lines you have to cross? And brown?)
 
 .. image:: epi_200_300_4_1.png
    :align: center
