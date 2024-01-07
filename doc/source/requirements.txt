@@ -1,4 +1,4 @@
 # requirements to build the documentation
 
-Sphinx>=2.2
+Sphinx>=7.2
 sphinx_rtd_theme
